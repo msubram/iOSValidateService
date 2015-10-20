@@ -1,0 +1,85 @@
+/* 
+  Localizable.strings
+  Validations
+
+  Created by Lalitha Vedachalam on 9/25/15.
+  Copyright © 2015 melioSystems. All rights reserved.
+*/
+
+
+/* Class = "UILabel"; text = "Work Telephone"; ObjectID = "6ls-yh-hRd"; */
+"6ls-yh-hRd.text" = "Рабочий телефон";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "8BI-1g-tig"; */
+"8BI-1g-tig.normalTitle" = "Регистр";
+
+/* Class = "UILabel"; text = "Home Telephone"; ObjectID = "8kr-Z3-skO"; */
+"8kr-Z3-skO.text" = "Домашний телефон";
+
+/* Class = "UILabel"; text = "Your Mobile Number"; ObjectID = "GB8-8N-S5A"; */
+"GB8-8N-S5A.text" = "Номер Вашего Мобильного число";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "MkS-sC-JzI"; */
+"MkS-sC-JzI.normalTitle" = "обновление";
+
+/* Class = "UIButton"; normalTitle = "Complete"; ObjectID = "N72-NI-NS7"; */
+"N72-NI-NS7.normalTitle" = "полный";
+
+/* Class = "UINavigationItem"; title = "Registration : Step-1"; ObjectID = "P8p-Si-hxg"; */
+"P8p-Si-hxg.title" = "Регистрация : Шаг -1";
+
+/* Class = "UILabel"; text = "Upon receipt please enter 5-digit registration code below"; ObjectID = "SO4-pW-zC8"; */
+"SO4-pW-zC8.text" = "После получения введите 5 - значный регистрационный код ниже";
+
+/* Class = "UILabel"; text = "You should shortly receive a 5-digit registration code by text"; ObjectID = "TjC-dt-JOr"; */
+"TjC-dt-JOr.text" = "Вы должны в ближайшее время получить 5 - значный регистрационный код по тексту";
+
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "XyD-m1-AXg"; */
+"XyD-m1-AXg.normalTitle" = "Повторите";
+
+/* Class = "UILabel"; text = "Please enter your mobile number to register for the service"; ObjectID = "ZbB-Sc-O0V"; */
+"ZbB-Sc-O0V.text" = "Пожалуйста, введите номер вашего мобильного телефона , чтобы зарегистрироваться для обслуживания";
+
+/* Class = "UINavigationItem"; title = "User Information"; ObjectID = "bxM-ag-GId"; */
+"bxM-ag-GId.title" = "информация О Пользователе";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "e20-p6-ZJq"; */
+"e20-p6-ZJq.text" = "страна";
+
+/* Class = "UINavigationItem"; title = "Registration : Step-2"; ObjectID = "pTw-EV-7Dp"; */
+"pTw-EV-7Dp.title" = "Регистрация : Шаг -2";
+
+/* Class = "UINavigationItem"; title = "Validations"; ObjectID = "tdP-Po-Cf8"; */
+"tdP-Po-Cf8.title" = "Проверки";
+
+/* Class = "UIButton"; normalTitle = "Validate"; ObjectID = "uAC-e6-ZCU"; */
+"uAC-e6-ZCU.normalTitle" = "действительный";
+
+/* Class = "UILabel"; text = "Please update the following"; ObjectID = "zsd-8C-moQ"; */
+"zsd-8C-moQ.text" = "Пожалуйста, обновите следующее";
+
+/* For Dynamic Values */
+
+"India"  = "Индия";
+
+"United Kingdom" = "Великобритания";
+
+"United States"  = "Соединенные Штаты";
+
+"Retry" = "Повторите";
+
+"Warning" = "предупреждение";
+
+"Update" = "обновление";
+
+"Please don't leave the fields blank" = "Пожалуйста, не оставьте поля пустыми";
+
+"OK" = "Хорошо";
+
+"Please Check your Wifi Connection" = "Пожалуйста, проверьте ваши WiFi соединение";
+
+"Successfully Validated" = "успешно проверен";
+
+"Something went wrong.Please try again." = "Что-то пошло не так. Пожалуйста, попробуйте еще раз.";
+
+"Please enter a valid OTP token" = "Пожалуйста, введите маркер OTP";

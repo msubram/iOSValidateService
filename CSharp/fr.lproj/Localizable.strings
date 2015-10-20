@@ -1,3 +1,11 @@
+/* 
+  Localizable.strings
+  Validations
+
+  Created by Lalitha Vedachalam on 9/25/15.
+  Copyright © 2015 melioSystems. All rights reserved.
+*/
+
 
 /* Class = "UILabel"; text = "Work Telephone"; ObjectID = "6ls-yh-hRd"; */
 "6ls-yh-hRd.text" = "Téléphone au travail";
@@ -53,5 +61,28 @@
 /* Class = "UILabel"; text = "Please Check your Wifi Connection"; ObjectID = "OP2-Of-TFa"; */
 "OP2-Of-TFa.text" = "S\'il vous plaît vérifier votre connexion Wifi";
 
-/* Class = "UILabel"; text = "Please Check your Wifi Connection"; ObjectID = "DXU-NH-Jid"; */
-"OP2-Of-TFa.text" = "S\'il vous plaît vérifier votre connexion Wifi";
+/* For Dynamic Values */
+
+"India"  = "Inde";
+
+"United Kingdom" = "Royaume-Uni";
+
+"United States"  =  "États Unis";
+
+"Retry"  = "refaire";
+
+"Warning" = "Attention";
+
+"Update" = "Mettre à jour";
+
+"Please don't leave the fields blank" = "S'il vous plaît ne laissez pas les champs vides";
+
+"OK" = "D'accord";
+
+"Please Check your Wifi Connection" = "S\'il vous plaît vérifier votre connexion Wifi";
+
+"Successfully Validated" = "succès validé";
+
+"Something went wrong.Please try again." = "Une erreur sS\'est produite. Veuillez réessayer.";
+
+"Please enter a valid OTP token" = "S'il vous plaît entrer un jeton OTP valide";

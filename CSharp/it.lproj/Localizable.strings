@@ -1,0 +1,85 @@
+/* 
+  Localizable.strings
+  Validations
+
+  Created by Lalitha Vedachalam on 9/25/15.
+  Copyright © 2015 melioSystems. All rights reserved.
+*/
+
+
+/* Class = "UILabel"; text = "Work Telephone"; ObjectID = "6ls-yh-hRd"; */
+"6ls-yh-hRd.text" = "Telefono lavoro";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "8BI-1g-tig"; */
+"8BI-1g-tig.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "Home Telephone"; ObjectID = "8kr-Z3-skO"; */
+"8kr-Z3-skO.text" = "casa Telefono";
+
+/* Class = "UILabel"; text = "Your Mobile Number"; ObjectID = "GB8-8N-S5A"; */
+"GB8-8N-S5A.text" = "Il tuo numero di cellulare";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "MkS-sC-JzI"; */
+"MkS-sC-JzI.normalTitle" = "aggiornare";
+
+/* Class = "UIButton"; normalTitle = "Complete"; ObjectID = "N72-NI-NS7"; */
+"N72-NI-NS7.normalTitle" = "completo";
+
+/* Class = "UINavigationItem"; title = "Registration : Step-1"; ObjectID = "P8p-Si-hxg"; */
+"P8p-Si-hxg.title" = "Registrazione : Fase - 1";
+
+/* Class = "UILabel"; text = "Upon receipt please enter 5-digit registration code below"; ObjectID = "SO4-pW-zC8"; */
+"SO4-pW-zC8.text" = "Al ricevimento inserisci il codice di registrazione a 5 cifre in basso";
+
+/* Class = "UILabel"; text = "You should shortly receive a 5-digit registration code by text"; ObjectID = "TjC-dt-JOr"; */
+"TjC-dt-JOr.text" = "Dovreste breve riceverà un 5 cifre codice di registrazione per il testo";
+
+/* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "XyD-m1-AXg"; */
+"XyD-m1-AXg.normalTitle" = "Riprova";
+
+/* Class = "UILabel"; text = "Please enter your mobile number to register for the service"; ObjectID = "ZbB-Sc-O0V"; */
+"ZbB-Sc-O0V.text" = "Inserisci il tuo numero di cellulare per la registrazione al servizio";
+
+/* Class = "UINavigationItem"; title = "User Information"; ObjectID = "bxM-ag-GId"; */
+"bxM-ag-GId.title" = "Informazioni Utente";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "e20-p6-ZJq"; */
+"e20-p6-ZJq.text" = "Nazione";
+
+/* Class = "UINavigationItem"; title = "Registration : Step-2"; ObjectID = "pTw-EV-7Dp"; */
+"pTw-EV-7Dp.title" = "Registrazione : Fase - 2";
+
+/* Class = "UINavigationItem"; title = "Validations"; ObjectID = "tdP-Po-Cf8"; */
+"tdP-Po-Cf8.title" = "Validazioni";
+
+/* Class = "UIButton"; normalTitle = "Validate"; ObjectID = "uAC-e6-ZCU"; */
+"uAC-e6-ZCU.normalTitle" = "convalidare";
+
+/* Class = "UILabel"; text = "Please update the following"; ObjectID = "zsd-8C-moQ"; */
+"zsd-8C-moQ.text" = "Si prega di aggiornare i seguenti";
+
+/* For Dynamic Values */
+
+"India"  = "India";
+
+"United Kingdom" = "Regno Unito";
+
+"United States" = "stati Uniti";
+
+"Retry" = "Riprova";
+
+"Warning" = "avvertimento";
+
+"Update" = "aggiornamento";
+
+"Please don't leave the fields blank" = "Si prega di non lasciare vuoti i campi";
+
+"OK" = "OK";
+
+"Please Check your Wifi Connection" = "Si prega di controllare la connessione Wifi";
+
+"Successfully Validated" = "convalidato correttamente";
+
+"Something went wrong.Please try again." = "Qualcosa è andato wrong.Please riprovare.";
+
+"Please enter a valid OTP token" = "Si prega di inserire un token OTP valida";

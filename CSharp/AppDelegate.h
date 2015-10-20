@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic, retain) NSString *mobileNumber;
+
+@property (nonatomic, retain) NSString *countryCode;
 
 @end
 

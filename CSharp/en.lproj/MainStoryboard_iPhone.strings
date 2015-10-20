@@ -1,57 +1,51 @@
 
 /* Class = "UILabel"; text = "Work Telephone"; ObjectID = "6ls-yh-hRd"; */
-"6ls-yh-hRd.text" = "Téléphone au travail";
+"6ls-yh-hRd.text" = "Work Telephone";
 
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "8BI-1g-tig"; */
-"8BI-1g-tig.normalTitle" = "Inscription";
+"8BI-1g-tig.normalTitle" = "Register";
 
 /* Class = "UILabel"; text = "Home Telephone"; ObjectID = "8kr-Z3-skO"; */
-"8kr-Z3-skO.text" = "Accueil téléphonique";
+"8kr-Z3-skO.text" = "Home Telephone";
 
 /* Class = "UILabel"; text = "Your Mobile Number"; ObjectID = "GB8-8N-S5A"; */
-"GB8-8N-S5A.text" = "Ton Numéro De Téléphone";
+"GB8-8N-S5A.text" = "Your Mobile Number";
 
 /* Class = "UIButton"; normalTitle = "Update"; ObjectID = "MkS-sC-JzI"; */
-"MkS-sC-JzI.normalTitle" = "Mise À Jour";
+"MkS-sC-JzI.normalTitle" = "Update";
 
 /* Class = "UIButton"; normalTitle = "Complete"; ObjectID = "N72-NI-NS7"; */
-"N72-NI-NS7.normalTitle" = "complet";
+"N72-NI-NS7.normalTitle" = "Complete";
 
 /* Class = "UINavigationItem"; title = "Registration : Step-1"; ObjectID = "P8p-Si-hxg"; */
-"P8p-Si-hxg.title" = "Inscription: Étape - 1";
+"P8p-Si-hxg.title" = "Registration : Step-1";
 
 /* Class = "UILabel"; text = "Upon receipt please enter 5-digit registration code below"; ObjectID = "SO4-pW-zC8"; */
-"SO4-pW-zC8.text" = "Dès réception s\'il vous plaît entrez le code d\'enregistrement à 5 chiffres ci-dessous";
+"SO4-pW-zC8.text" = "Upon receipt please enter 5-digit registration code below";
 
 /* Class = "UILabel"; text = "You should shortly receive a 5-digit registration code by text"; ObjectID = "TjC-dt-JOr"; */
-"TjC-dt-JOr.text" = "Vous devriez bientôt recevoir un code d\'enregistrement à 5 chiffres par texte";
+"TjC-dt-JOr.text" = "You should shortly receive a 5-digit registration code by text";
 
 /* Class = "UIButton"; normalTitle = "Retry"; ObjectID = "XyD-m1-AXg"; */
-"XyD-m1-AXg.normalTitle" = "refaire";
+"XyD-m1-AXg.normalTitle" = "Retry";
 
 /* Class = "UILabel"; text = "Please enter your mobile number to register for the service"; ObjectID = "ZbB-Sc-O0V"; */
-"ZbB-Sc-O0V.text" = "S\'il vous plaît entrer votre numéro de téléphone mobile pour vous inscrire pour le service";
+"ZbB-Sc-O0V.text" = "Please enter your mobile number to register for the service";
 
 /* Class = "UINavigationItem"; title = "User Information"; ObjectID = "bxM-ag-GId"; */
-"bxM-ag-GId.title" = "Informations utilisateur";
+"bxM-ag-GId.title" = "User Information";
 
 /* Class = "UILabel"; text = "Country"; ObjectID = "e20-p6-ZJq"; */
-"e20-p6-ZJq.text" = "pays";
+"e20-p6-ZJq.text" = "Country";
 
 /* Class = "UINavigationItem"; title = "Registration : Step-2"; ObjectID = "pTw-EV-7Dp"; */
-"pTw-EV-7Dp.title" = "Inscription: Étape - 2";
+"pTw-EV-7Dp.title" = "Registration : Step-2";
 
 /* Class = "UINavigationItem"; title = "Validations"; ObjectID = "tdP-Po-Cf8"; */
 "tdP-Po-Cf8.title" = "Validations";
 
 /* Class = "UIButton"; normalTitle = "Validate"; ObjectID = "uAC-e6-ZCU"; */
-"uAC-e6-ZCU.normalTitle" = "valider";
+"uAC-e6-ZCU.normalTitle" = "Validate";
 
 /* Class = "UILabel"; text = "Please update the following"; ObjectID = "zsd-8C-moQ"; */
-"zsd-8C-moQ.text" = "S\'il vous plaît mettre à jour les éléments suivants";
-
-/* Class = "UILabel"; text = "Please Check your Wifi Connection"; ObjectID = "OP2-Of-TFa"; */
-"OP2-Of-TFa.text" = "S\'il vous plaît vérifier votre connexion Wifi";
-
-/* Class = "UILabel"; text = "Please Check your Wifi Connection"; ObjectID = "DXU-NH-Jid"; */
-"OP2-Of-TFa.text" = "S\'il vous plaît vérifier votre connexion Wifi";
+"zsd-8C-moQ.text" = "Please update the following";

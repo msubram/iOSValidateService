@@ -1,0 +1,34 @@
+//
+//  CSharp-Prefix.pch
+//  CSharp
+//
+//  Created by Vishal on 9/19/15.
+//  Copyright (c) 2015 meliosystems. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+// IPhone
+#define IS_IPHONE_5 ([[UIScreen mainScreen] bounds].size.height == 568.0f)
+// iPhone 5
+#define IS_IPHONE ([[UIScreen mainScreen] bounds].size.height == 480.0f)
+// iPad
+#define IS_IPAD ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+
+// Base URL
+#define IS_BASE_URL @"http://www.csharpsolutions.co.uk/ValidateApp/api/v1"
+
+//Keyboard Offset
+#define kOFFSET_FOR_KEYBOARD 80.0
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+
+

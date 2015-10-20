@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self enablePushNotification];
     return YES;
 }
 
@@ -26,6 +27,7 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
@@ -40,6 +42,44 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) enablePushNotification {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert) categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    }
+    else {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+         (UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)];
+    }
+}
+
+//Push Notification Delegate Methods
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+    //#if !TARGET_IPHONE_SIMULATOR
+    // Prepare the Device Token for Registration (remove spaces and < >)
+    NSString *deviceToken = [[[[devToken description]
+                               stringByReplacingOccurrencesOfString:@"<"withString:@""]                             stringByReplacingOccurrencesOfString:@">" withString:@""]                             stringByReplacingOccurrencesOfString: @" " withString: @""];
+    
+    NSLog(@"Device Token %@",deviceToken);
+    [self updateToken:deviceToken];
+    //#endif
+    
+}
+
+- (void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //#if !TARGET_IPHONE_SIMULATOR
+    NSLog(@"Error in Registration, Error : %@",error);
+    //#endif
+}
+
+
+- (void) updateToken:(NSString *)deviceToken {
+    [[NSUserDefaults standardUserDefaults] setValue:deviceToken forKey:@"deviceToken"]; 
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
