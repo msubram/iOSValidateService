@@ -12,6 +12,12 @@
 #import "OTPViewController.h"
 #import "ValidateViewController.h"
 
+static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
+static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
+static const CGFloat MAXIMUM_SCROLL_FRACTION = 0.8;
+static const CGFloat PORTRAIT_KEYBOARD_HEIGHT = 216;
+static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
+
 @interface ViewController ()
 
 @end
@@ -35,11 +41,6 @@
     }
     
     [super viewDidLoad];
-    
-    //Hud View
-    [self.HUDView setHidden:YES];
-    self.HUDView.layer.cornerRadius = 5;
-    self.HUDView.layer.masksToBounds = YES;
     
     //Setting Value for Country and Picker View
     countries                   =   [[NSArray alloc] initWithObjects: NSLocalizedString(@"India", nil) , NSLocalizedString(@"United Kingdom", nil),NSLocalizedString(@"United States", nil),nil];
@@ -83,14 +84,30 @@
 
 }
 
+/*!
+ * @brief To check the internet connectivity
+ */
+-(BOOL)checkInternetConnection{
+    if([(AppDelegate *)[[UIApplication sharedApplication] delegate] checkInternetConnection] == 0){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+/*!
+ * @brief Dismiss the overlapping view when tap outside of the keyboard or overlapping views
+ */
 -(void)dismissAnyOverLappingView{
-    //Dismiss the overlapping view when tap outside of the keyboard
     [self.peopleCountry resignFirstResponder];
     [self.peopleMobileNumber resignFirstResponder];
 }
 
+/*!
+ * @brief Changes the keyboard view into the picker view when tapped the UITextField
+ */
 - (IBAction)openCountryPickerView:(id)sender {
-    //To add picker view for country instead of keyboard
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     pickerView.dataSource = self;
     pickerView.delegate = self;
@@ -131,20 +148,93 @@
     }
 }
 
-//Make View up when keyboard shows
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    CGRect textFieldRect =[self.view.window convertRect:textField.bounds fromView:textField];
+    CGRect viewRect = [self.view.window convertRect:self.view.bounds fromView:self.view];
+    
+    CGFloat midline = textFieldRect.origin.y - 2 * textFieldRect.size.height;
+    CGFloat numerator =
+    midline - viewRect.origin.y
+    - MINIMUM_SCROLL_FRACTION * viewRect.size.height;
+    CGFloat denominator =
+    (MAXIMUM_SCROLL_FRACTION - MINIMUM_SCROLL_FRACTION)
+    * viewRect.size.height;
+    CGFloat heightFraction = numerator / denominator;
+    
+    if (heightFraction < 0.0)
+    {
+        heightFraction = 0.0;
+    }
+    else if (heightFraction > 1.0)
+    {
+        heightFraction = 1.0;
+    }
+    
+    UIInterfaceOrientation orientation =
+    [[UIApplication sharedApplication] statusBarOrientation];
+    if (orientation == UIInterfaceOrientationPortrait ||
+        orientation == UIInterfaceOrientationPortraitUpsideDown)
+    {
+        animatedDistance = floor(PORTRAIT_KEYBOARD_HEIGHT * heightFraction);
+    }
+    else
+    {
+        animatedDistance = floor(LANDSCAPE_KEYBOARD_HEIGHT * heightFraction);
+    }
+    
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y -= animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    [UIView commitAnimations];
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    CGRect viewFrame = self.view.frame;
+    viewFrame.origin.y += animatedDistance;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:KEYBOARD_ANIMATION_DURATION];
+    
+    [self.view setFrame:viewFrame];
+    [UIView commitAnimations];
+}
+
+
+/*!
+ * @brief TextField delegate called when textfield editing starts
+ * @param textField An object representing textfield requesting the data
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
-    //Keyboard becomes visible
+    //After Keyboard becomes visible
     self.view.frame = CGRectMake(0,-200,self.view.frame.size.width,self.view.frame.size.height);
     //resize
 }
 
+/*!
+ * @brief TextField delegate called when textfield editing ends
+ * @param textField An object representing textfield requesting the data
+
 -(void)textFieldDidEndEditing:(UITextField *)textField {
-    //keyboard will hide
+    //After keyboard will hide
     self.view.frame = CGRectMake(0,0,self.view.frame.size.width,self.view.frame.size.height);
     //Return to original size
 }
-/* End */
+*/
 
+/*!
+ * @brief Validate the user for the empty field and send the request to the server for the OTP
+ * @param sender An object representing the button requesting for the data
+ */
 - (IBAction)registerUserAfterValidating:(id)sender {
     // Validating the user for empty entries in the mobile number text field
     if(![self.peopleMobileNumber.text  isEqual: @""]){
@@ -160,16 +250,27 @@
         NSError * err;
         NSData * peopleData   = [NSJSONSerialization  dataWithJSONObject:valuesForServer options:0 error:&err];
         NSString * peopleDataInString = [[NSString alloc] initWithData:peopleData encoding:NSUTF8StringEncoding];
-        
-        [[UtilitiesController sharedInstance] sendRequestForOTP:peopleDataInString];
- 
+        //To Check Internet Connectivity
+        if([self checkInternetConnection]){
+            [[UtilitiesController sharedInstance] sendRequestForOTP:peopleDataInString];
+        }
+        else{
+            [self dismissAnyOverLappingView];
+            UIAlertView *alertView  =   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message: NSLocalizedString(@"Please Check your Wifi Connection",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
+            [alertView show];
+        }
     }
     else{
+        [self dismissAnyOverLappingView];
         UIAlertView *alertView  =   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message: NSLocalizedString(@"Please don't leave the fields blank",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
         [alertView show];
     }
 }
 
+/*!
+ * @brief After requesting the server for OTP switch the view from ViewController to OTPViewController
+ * @param notification Carries the particular notification which have been requested
+ */
 -(void)requestForOTPNotification: (NSNotification *) notification{
     //Notification after validating the user details
     if ([[notification name] isEqualToString:@"requestForOTPNotification"]) {
@@ -184,18 +285,9 @@
             [self.navigationController pushViewController:destViewController animated:YES];
         }
         else {
-            [self.peopleMobileNumber resignFirstResponder];
-            [UIView transitionWithView:self.HUDView duration:1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void){
-                [self.HUDView setHidden:NO];
-            } completion:nil];
-            //[self.HUDView setHidden:NO];
-            double delayInSeconds = 3;
-            dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-            dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-                [UIView transitionWithView:self.HUDView duration:1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^(void){
-                    [self.HUDView setHidden:YES];
-                } completion:nil];
-            });
+            [self dismissAnyOverLappingView];
+            UIAlertView *alertView  =   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message: NSLocalizedString(@"Please Check your Wifi Connection",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
+            [alertView show];
         }
     }
 

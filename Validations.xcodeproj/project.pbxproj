@@ -17,6 +17,7 @@
 		6F79DE421BAD25A000120D1E /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE411BAD25A000120D1E /* UpdateViewController.m */; };
 		6F79DE451BAD25C500120D1E /* ValidateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE441BAD25C500120D1E /* ValidateViewController.m */; };
 		6F79DE4D1BAD444500120D1E /* UtilitiesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE4C1BAD444500120D1E /* UtilitiesController.m */; };
+		6FA11D9E1BDE4B5600CC3910 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA11D9D1BDE4B5600CC3910 /* Reachability.m */; settings = {ASSET_TAGS = (); }; };
 		6FB5C8C41BB51A05005C8573 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5C8C61BB51A05005C8573 /* Localizable.strings */; };
 		6FD308981BB143420005B96F /* CSharpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE301BAD0FC900120D1E /* CSharpTests.m */; };
 		6FFAE09C1BD66A270017FF28 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FFAE09A1BD66A270017FF28 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
@@ -53,6 +54,8 @@
 		6F79DE4B1BAD444500120D1E /* UtilitiesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilitiesController.h; sourceTree = "<group>"; };
 		6F79DE4C1BAD444500120D1E /* UtilitiesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilitiesController.m; sourceTree = "<group>"; };
 		6F79DE4E1BAD510300120D1E /* CSharp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSharp-Prefix.pch"; sourceTree = "<group>"; };
+		6FA11D9C1BDE4B5600CC3910 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6FA11D9D1BDE4B5600CC3910 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		6FB5C8C11BB518BB005C8573 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MainStoryboard_iPhone.strings; sourceTree = "<group>"; };
 		6FB5C8C51BB51A05005C8573 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6FB5C8C71BB51A0B005C8573 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		6F79DE081BAD0FC900120D1E = {
 			isa = PBXGroup;
 			children = (
+				6FA11D9B1BDE4B3700CC3910 /* Reachability */,
 				6F79DE131BAD0FC900120D1E /* CSharp */,
 				6F79DE2D1BAD0FC900120D1E /* CSharpTests */,
 				6F79DE121BAD0FC900120D1E /* Products */,
@@ -164,6 +168,15 @@
 				6F79DE4C1BAD444500120D1E /* UtilitiesController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		6FA11D9B1BDE4B3700CC3910 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				6FA11D9C1BDE4B5600CC3910 /* Reachability.h */,
+				6FA11D9D1BDE4B5600CC3910 /* Reachability.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +288,7 @@
 			files = (
 				6F79DE451BAD25C500120D1E /* ValidateViewController.m in Sources */,
 				6F79DE3F1BAD199F00120D1E /* OTPViewController.m in Sources */,
+				6FA11D9E1BDE4B5600CC3910 /* Reachability.m in Sources */,
 				6F79DE1D1BAD0FC900120D1E /* ViewController.m in Sources */,
 				6F79DE421BAD25A000120D1E /* UpdateViewController.m in Sources */,
 				6F79DE4D1BAD444500120D1E /* UtilitiesController.m in Sources */,
@@ -359,6 +373,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -407,6 +422,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;

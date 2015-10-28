@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>{
     NSArray *countries;
+    CGFloat animatedDistance;
 }
 
 @property (strong, nonatomic) IBOutlet UIImageView *appLogo;
@@ -19,8 +20,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *peopleCountry;
 
 @property (nonatomic, retain) IBOutlet NSString *countryCode;
-
-@property (strong, nonatomic) IBOutlet UIView *HUDView;
 
 - (IBAction)openCountryPickerView:(id)sender;
 

@@ -22,8 +22,6 @@
 
 @property (strong, nonatomic) IBOutlet UIAlertView *alertView;
 
-@property (strong, nonatomic) IBOutlet UIView *HUDView;
-
 - (IBAction)validationProcess:(id)sender;
 
 @end

@@ -44,6 +44,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+/*!
+ * @brief Request the user to allow or disallow the push notification
+ */
 - (void) enablePushNotification {
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert) categories:nil];
@@ -56,8 +59,9 @@
     }
 }
 
-//Push Notification Delegate Methods
-
+/*!
+ * @brief Push Notification Delegate Methods
+ */
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
     //#if !TARGET_IPHONE_SIMULATOR
     // Prepare the Device Token for Registration (remove spaces and < >)
@@ -75,11 +79,27 @@
     NSLog(@"Error in Registration, Error : %@",error);
     //#endif
 }
+/* End */
 
-
+/*!
+ * @brief Update the device token in the user defaults for the future use
+ * @param deviceToken Holds the device token value
+ */
 - (void) updateToken:(NSString *)deviceToken {
     [[NSUserDefaults standardUserDefaults] setValue:deviceToken forKey:@"deviceToken"]; 
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+/*!
+ * @brief Check for the internet connectivity in the mobile
+ */
+- (BOOL) checkInternetConnection {
+    self.reachability = [Reachability reachabilityForInternetConnection];
+    remoteHostStatus = [self.reachability currentReachabilityStatus];
+    if(remoteHostStatus == ReachableViaWiFi)
+        return YES;
+    else
+        return NO;
 }
 
 @end

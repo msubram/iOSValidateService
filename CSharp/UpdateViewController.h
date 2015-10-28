@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UpdateViewController : UIViewController
+@interface UpdateViewController : UIViewController{
+    CGFloat animatedDistance;
+}
 
 @property (nonatomic, retain) IBOutlet NSString *mobileNumber;
 

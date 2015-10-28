@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OTPViewController : UIViewController
+@interface OTPViewController : UIViewController{
+    CGFloat animatedDistance;
+}
 
 @property (nonatomic, retain) IBOutlet NSString *mobileNumber;
 

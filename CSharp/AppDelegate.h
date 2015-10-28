@@ -7,14 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+    NetworkStatus remoteHostStatus;
+}
+
+@property (nonatomic) Reachability *reachability;
 
 @property (strong, nonatomic) UIWindow *window;
+
+-(BOOL) checkInternetConnection;
 
 @property (nonatomic, retain) NSString *mobileNumber;
 
 @property (nonatomic, retain) NSString *countryCode;
 
 @end
-

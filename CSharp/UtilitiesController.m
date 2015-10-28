@@ -20,6 +20,10 @@
     return sharedStore;
 }
 
+/*!
+ * @brief Send the request to get the OTP
+ * @param mobileDetails Contains the details of the user country code and mobile number
+ */
 -(void) sendRequestForOTP:(NSString *)mobileDetails{
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -68,6 +72,10 @@
 
 }
 
+/*!
+ * @brief Send the request to the server to validate the OTP
+ * @param mobileDetailsWithOTP Holds the details of the user and the OTP entered by the user
+ */
 - (void) sendRequestToValidateOTP:(NSString *)mobileDetailsWithOTP{
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
@@ -114,6 +122,10 @@
     }];
 }
 
+/*!
+ * @brief Send the request to the server to validate the user
+ * @param message Holds the return value from the server after the UDP broadcast
+ */
 -(void)sendRequestForValidation : (NSString *) message{
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -171,6 +183,10 @@
     }];
 }
 
+/*!
+ * @brief Send the request to the server for the GCM registration
+ * @param deviceToken Holds the device token for the device
+ */
 -(void) GCMRegistrationProcess:deviceToken{
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
