@@ -7,7 +7,6 @@
 //
 
 #import "UtilitiesController.h"
-#import "OTPViewController.h"
 
 @implementation UtilitiesController
 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,62 +11,18 @@
             <rect key="frame" x="0.0" y="0.0" width="564" height="574"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 melioSystems. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 melioSystems. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" id="8ie-xW-0ye">
                     <rect key="frame" x="20" y="636" width="524" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CSharp_Logo_Icon-1024x500-white background" translatesAutoresizingMaskIntoConstraints="NO" id="z2N-vF-5cP">
-                    <rect key="frame" x="0.0" y="63" width="564" height="444"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="z2N-vF-5cP" secondAttribute="height" multiplier="80:57" id="1tr-2C-HvX"/>
-                        <constraint firstAttribute="height" constant="444" id="4pT-g7-Uxn"/>
-                        <constraint firstAttribute="height" constant="285" id="IyP-H7-E23"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="1tr-2C-HvX"/>
-                            <exclude reference="IyP-H7-E23"/>
-                        </mask>
-                    </variation>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="6lS-OP-OQ8"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="BfI-2K-RaB"/>
-                <constraint firstAttribute="trailing" secondItem="z2N-vF-5cP" secondAttribute="trailing" constant="138" id="Dbv-vH-MoO"/>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="35" id="EN7-uz-cfx"/>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="150" id="FbU-5Z-d6k"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="-83" id="KOI-5N-xf6"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="Vas-4j-QYN"/>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-15" id="bbR-St-srp"/>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hgn-XZ-zZU"/>
-                <constraint firstAttribute="trailing" secondItem="z2N-vF-5cP" secondAttribute="trailing" constant="45" id="htP-xe-UWn"/>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="63" id="ixr-Vq-DvG"/>
-                <constraint firstItem="z2N-vF-5cP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kYX-On-oDK"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="v8J-2d-g2l"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="Dbv-vH-MoO"/>
-                    <exclude reference="EN7-uz-cfx"/>
-                    <exclude reference="FbU-5Z-d6k"/>
-                    <exclude reference="Vas-4j-QYN"/>
-                    <exclude reference="bbR-St-srp"/>
-                    <exclude reference="htP-xe-UWn"/>
-                    <exclude reference="kYX-On-oDK"/>
-                    <exclude reference="Kzo-t9-V3l"/>
-                </mask>
-            </variation>
             <point key="canvasLocation" x="532" y="448"/>
         </view>
     </objects>
-    <resources>
-        <image name="CSharp_Logo_Icon-1024x500-white background" width="1024" height="500"/>
-    </resources>
 </document>

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Google/CloudMessaging.h>
 #import "Reachability.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate> {
     NetworkStatus remoteHostStatus;
 }
 
@@ -22,5 +23,13 @@
 @property (nonatomic, retain) NSString *mobileNumber;
 
 @property (nonatomic, retain) NSString *countryCode;
+
+@property(nonatomic, readonly, strong) NSString *registrationKey;
+
+@property(nonatomic, readonly, strong) NSString *messageKey;
+
+@property(nonatomic, readonly, strong) NSDictionary *registrationOptions;
+
+@property(nonatomic, readonly, strong) NSString *gcmSenderID;
 
 @end

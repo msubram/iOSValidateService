@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Validations
+
+  Created by Lalitha Vedachalam on 10/31/15.
+  Copyright © 2015 melioSystems. All rights reserved.
+*/
+"CFBundleDisplayName" = "Проверки";
+"CFBundleName" = "Проверки";

@@ -9,7 +9,7 @@
 #import "ValidateViewController.h"
 #import "AppDelegate.h"
 #import "UtilitiesController.h"
-#import "UpdateViewController.h"
+#import "UserInformationTableViewController.h"
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <unistd.h>
@@ -87,7 +87,7 @@
     else
         storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
     
-    UpdateViewController *destViewController = (UpdateViewController *) [storyboard instantiateViewControllerWithIdentifier:@"UpdateViewController"];
+    UserInformationTableViewController *destViewController = (UserInformationTableViewController *) [storyboard instantiateViewControllerWithIdentifier:@"UserInformationTableViewController"];
     [self.navigationController pushViewController:destViewController animated:YES];
     
 }
@@ -320,7 +320,7 @@
                 [alert show];
             }
             else{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert Title")  message:NSLocalizedString(@"Successfully Validated",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles:nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Success",@"Alert Title")  message:NSLocalizedString(@"Successfully Validated",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles:nil];
                 [alert show];
             }
         }

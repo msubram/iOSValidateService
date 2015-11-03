@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "UtilitiesController.h"
 #import "UpdateViewController.h"
+#import "SVProgressHUD.h"
 
 static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
 static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
@@ -213,6 +214,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
  * @param sender An object representing the button actions requesting for the data
  */
 - (IBAction)validateOTP:(id)sender {
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"Loading", @"Loading text") maskType:SVProgressHUDMaskTypeGradient];
     
     NSString *enteredOTPValue   =   [NSString stringWithFormat:@"%@%@%@%@%@",self.OTPFirstDigit.text,self.OTPSecondDigit.text,self.OTPThirdDigit.text,self.OTPFourthDigit.text,self.OTPFifthDigit.text];
     
@@ -223,6 +225,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         [[UtilitiesController sharedInstance] sendRequestToValidateOTP:valuesForServer];
     }
     else{
+        [SVProgressHUD dismiss];
         UIAlertView *alertView  =   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message: NSLocalizedString(@"Please Check your Wifi Connection",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
         [alertView show];
     }
@@ -238,6 +241,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         if([userInfo[@"state"] isEqualToString:@"success"]) {
             if([userInfo[@"data"] isEqualToString:@"-1"]){
                 [self dismissAnyOverLappingView];
+                [SVProgressHUD dismiss];
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message:NSLocalizedString(@"Please enter a valid OTP token",@"Alert message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles:nil];
                 [alert show];
                 self.OTPFirstDigit.text     =   @"";
@@ -254,6 +258,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         }
         else {
             [self dismissAnyOverLappingView];
+            [SVProgressHUD dismiss];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message:NSLocalizedString(@"Please check your Internet Connection", @"Alert message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles:nil];
             [alert show];
         }
@@ -266,6 +271,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
  * @param notification Holds the data and the type of the notification
  */
 -(void)GCMRegistrationNotification: (NSNotification *) notification{
+    [SVProgressHUD dismiss];
     if ([[notification name] isEqualToString:@"GCMRegistrationNotification"]) {
         NSDictionary *userInfo = notification.userInfo;
         if([userInfo[@"state"] isEqualToString:@"success"]) {

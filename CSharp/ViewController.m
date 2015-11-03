@@ -11,6 +11,7 @@
 #import "UtilitiesController.h"
 #import "OTPViewController.h"
 #import "ValidateViewController.h"
+#import "SVProgressHUD.h"
 
 static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
 static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
@@ -236,6 +237,9 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
  * @param sender An object representing the button requesting for the data
  */
 - (IBAction)registerUserAfterValidating:(id)sender {
+    
+    [SVProgressHUD showWithStatus:NSLocalizedString(@"Loading", @"Loading text") maskType:SVProgressHUDMaskTypeGradient];
+    
     // Validating the user for empty entries in the mobile number text field
     if(![self.peopleMobileNumber.text  isEqual: @""]){
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -256,12 +260,14 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
         }
         else{
             [self dismissAnyOverLappingView];
+            [SVProgressHUD dismiss];
             UIAlertView *alertView  =   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message: NSLocalizedString(@"Please Check your Wifi Connection",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
             [alertView show];
         }
     }
     else{
         [self dismissAnyOverLappingView];
+        [SVProgressHUD dismiss];
         UIAlertView *alertView  =   [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning",@"Alert title") message: NSLocalizedString(@"Please don't leave the fields blank",@"Alert Message") delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
         [alertView show];
     }
@@ -272,6 +278,7 @@ static const CGFloat LANDSCAPE_KEYBOARD_HEIGHT = 162;
  * @param notification Carries the particular notification which have been requested
  */
 -(void)requestForOTPNotification: (NSNotification *) notification{
+    [SVProgressHUD dismiss];
     //Notification after validating the user details
     if ([[notification name] isEqualToString:@"requestForOTPNotification"]) {
         NSDictionary *userInfo = notification.userInfo;
