@@ -153,6 +153,59 @@
     }
 }
 
+/*!
+ * @brief Temporary Function to send registration token
+ */
+
+- (IBAction)sendRegistrationTokenViaMail:(id)sender {
+    // Email Subject
+    NSString *emailTitle = @"Registration token";
+    // Email Content
+    NSUserDefaults *data                 =   [NSUserDefaults standardUserDefaults];
+    NSString *messageBody                =   [data valueForKey:@"registrationToken"];
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"vishal@meliosystems.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    UIAlertView *alertView;
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            alertView  =   [[UIAlertView alloc] initWithTitle:@"Mail cancelled" message:@"" delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
+            [alertView show];
+            break;
+        case MFMailComposeResultSaved:
+            alertView  =   [[UIAlertView alloc] initWithTitle:@"Mail saved" message:@"" delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
+            [alertView show];
+            break;
+        case MFMailComposeResultSent:
+            alertView  =   [[UIAlertView alloc] initWithTitle:@"Mail sent" message:@"" delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
+            [alertView show];
+            break;
+        case MFMailComposeResultFailed:
+            alertView  =   [[UIAlertView alloc] initWithTitle:@"Mail sent failure" message:[error localizedDescription] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles: nil];
+            [alertView show];
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+/* End */
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

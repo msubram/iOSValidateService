@@ -20,8 +20,14 @@
 
 @property (nonatomic, retain) IBOutlet NSString *HomeTelephoneNumber;
 
+@property (nonatomic, retain) IBOutlet NSDictionary *receivedNotification;
+
 @property (strong, nonatomic) IBOutlet UIAlertView *alertView;
 
+@property (weak, nonatomic) IBOutlet UIButton *notification;
+
 - (IBAction)validationProcess:(id)sender;
+
+- (IBAction)viewNotification:(id)sender;
 
 @end

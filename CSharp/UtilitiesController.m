@@ -184,9 +184,9 @@
 
 /*!
  * @brief Send the request to the server for the GCM registration
- * @param deviceToken Holds the device token for the device
+ * @param registrationToken Holds the device token for the device
  */
--(void) GCMRegistrationProcess:deviceToken{
+-(void) GCMRegistrationProcess:registrationToken{
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     NSString *url   =   [NSString stringWithFormat:@"%@/GCMRegistrationRequest/", IS_BASE_URL];
@@ -203,7 +203,7 @@
     NSString *userCountryCode       =   [userDefaults valueForKey:@"peopleCountryCode"];
     
     NSDictionary *valuesForServer   = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                       [NSString stringWithFormat:@"%@",userCountryCode], @"MobileCountryCode",[NSString stringWithFormat:@"%@",userMobileNumber],@"MobileNumber",@"", @"InstanceId", deviceToken, @"Token", nil];
+                                       [NSString stringWithFormat:@"%@",userCountryCode], @"CountryCode",[NSString stringWithFormat:@"%@",userMobileNumber],@"MobileNumber",@"91bHun", @"InstanceId", registrationToken, @"Token", nil];
     
     NSError * err;
     NSData * jsonData   = [NSJSONSerialization  dataWithJSONObject:valuesForServer options:0 error:&err];

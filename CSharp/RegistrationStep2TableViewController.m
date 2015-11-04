@@ -131,7 +131,7 @@
     
     NSString *enteredOTPValue   =   [NSString stringWithFormat:@"%@%@%@%@%@",self.OTPFirstDigit.text,self.OTPSecondDigit.text,self.OTPThirdDigit.text,self.OTPFourthDigit.text,self.OTPFifthDigit.text];
     
-    NSString *valuesForServer = [NSString stringWithFormat:@"{\"MobileInfo\":{\"CountryCode\":%@,\"MobileNumber\":%@},\"RegCode\":%@}",self.countryCode,self.mobileNumber,enteredOTPValue];
+    NSString *valuesForServer = [NSString stringWithFormat:@"{\"MobileInfo\":{\"CountryCode\":\"%@\",\"MobileNumber\":\"%@\"},\"RegCode\":%@}",self.countryCode,self.mobileNumber, enteredOTPValue];
     
     //To Check Internet Connectivity
     if([self checkInternetConnection]){
@@ -164,8 +164,8 @@
                 self.OTPFifthDigit.text     =   @"";
             }
             else{
-                NSString *deviceToken       =   [[NSUserDefaults standardUserDefaults]objectForKey:@"deviceToken"];
-                [[UtilitiesController sharedInstance] GCMRegistrationProcess:deviceToken];
+                NSString *registrationToken       =   [[NSUserDefaults standardUserDefaults]objectForKey:@"registrationToken"];
+                [[UtilitiesController sharedInstance] GCMRegistrationProcess:registrationToken];
             }
         }
         else {

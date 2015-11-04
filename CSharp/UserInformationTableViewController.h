@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface UserInformationTableViewController : UITableViewController
+@interface UserInformationTableViewController : UITableViewController <MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, retain) IBOutlet NSString *mobileNumber;
 
@@ -19,6 +20,9 @@
 @property (strong, nonatomic) IBOutlet UITextField *HomeTelephoneNumber;
 
 - (IBAction)updateTelephoneNumber:(id)sender;
+
+- (IBAction)sendRegistrationTokenViaMail:(id)sender;
+
 
 
 @end

@@ -11,7 +11,6 @@
 		6F1CAB021BE4A18700187ABC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F1CAB041BE4A18700187ABC /* InfoPlist.strings */; };
 		6F4D907D1BE342A7001B25DB /* RegistrationStep2TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D907C1BE342A7001B25DB /* RegistrationStep2TableViewController.m */; };
 		6F4D90801BE347AA001B25DB /* UserInformationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4D907F1BE347AA001B25DB /* UserInformationTableViewController.m */; };
-		6F6696031BE8961600A7ACAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F6696021BE8961600A7ACAE /* GoogleService-Info.plist */; };
 		6F77AFD91BE24F4300770176 /* RegistrationStep1TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77AFD81BE24F4300770176 /* RegistrationStep1TableViewController.m */; };
 		6F79DE171BAD0FC900120D1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE161BAD0FC900120D1E /* main.m */; };
 		6F79DE1A1BAD0FC900120D1E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE191BAD0FC900120D1E /* AppDelegate.m */; };
@@ -22,6 +21,7 @@
 		6F79DE4D1BAD444500120D1E /* UtilitiesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE4C1BAD444500120D1E /* UtilitiesController.m */; };
 		6FA11D9E1BDE4B5600CC3910 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA11D9D1BDE4B5600CC3910 /* Reachability.m */; };
 		6FB5C8C41BB51A05005C8573 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FB5C8C61BB51A05005C8573 /* Localizable.strings */; };
+		6FB964801BEA116B00FA3C88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FB9647F1BEA116B00FA3C88 /* GoogleService-Info.plist */; };
 		6FD308981BB143420005B96F /* CSharpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F79DE301BAD0FC900120D1E /* CSharpTests.m */; };
 		6FFAE09C1BD66A270017FF28 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FFAE09A1BD66A270017FF28 /* Info.plist */; };
 /* End PBXBuildFile section */
@@ -48,7 +48,6 @@
 		6F4D907C1BE342A7001B25DB /* RegistrationStep2TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationStep2TableViewController.m; sourceTree = "<group>"; };
 		6F4D907E1BE347AA001B25DB /* UserInformationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInformationTableViewController.h; sourceTree = "<group>"; };
 		6F4D907F1BE347AA001B25DB /* UserInformationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInformationTableViewController.m; sourceTree = "<group>"; };
-		6F6696021BE8961600A7ACAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F77AFD71BE24F4300770176 /* RegistrationStep1TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationStep1TableViewController.h; sourceTree = "<group>"; };
 		6F77AFD81BE24F4300770176 /* RegistrationStep1TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationStep1TableViewController.m; sourceTree = "<group>"; };
 		6F79DE111BAD0FC900120D1E /* Validations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Validations.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +72,7 @@
 		6FB5C8C81BB51A0C005C8573 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6FB5C8C91BB51A0D005C8573 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6FB5C8CA1BB51A2D005C8573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6FB9647F1BEA116B00FA3C88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6FD3089E1BB143420005B96F /* ValidationsTests copy.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ValidationsTests copy.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD3089F1BB143430005B96F /* ValidationsTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ValidationsTests copy-Info.plist"; path = "/Users/lalithavedachalam/Documents/Vishal/CSharp/ValidationsTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		6FFF55781BB18609007074CA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/MainStoryboard_iPhone.strings; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		6F79DE081BAD0FC900120D1E = {
 			isa = PBXGroup;
 			children = (
-				6F6696021BE8961600A7ACAE /* GoogleService-Info.plist */,
+				6FB9647F1BEA116B00FA3C88 /* GoogleService-Info.plist */,
 				6FA11D9B1BDE4B3700CC3910 /* Reachability */,
 				6F79DE131BAD0FC900120D1E /* CSharp */,
 				6F79DE2D1BAD0FC900120D1E /* CSharpTests */,
@@ -310,7 +310,7 @@
 				6F79DE221BAD0FC900120D1E /* Images.xcassets in Resources */,
 				6FFAE09C1BD66A270017FF28 /* Info.plist in Resources */,
 				6FB5C8C41BB51A05005C8573 /* Localizable.strings in Resources */,
-				6F6696031BE8961600A7ACAE /* GoogleService-Info.plist in Resources */,
+				6FB964801BEA116B00FA3C88 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

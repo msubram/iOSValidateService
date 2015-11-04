@@ -30,8 +30,12 @@
     self.countryCode                     =   [[NSUserDefaults standardUserDefaults] stringForKey:@"peopleCountryCode"];
     self.workTelephoneNumber             =   [[NSUserDefaults standardUserDefaults] stringForKey:@"workTelephoneNumber"];
     self.HomeTelephoneNumber             =   [[NSUserDefaults standardUserDefaults] stringForKey:@"HomeTelephoneNumber"];
+    self.receivedNotification            =   [[NSUserDefaults standardUserDefaults] objectForKey:@"receivedNotification"];
+    [self.notification setHidden:YES];
     
-    
+    if(self.receivedNotification){
+        [self.notification setHidden:NO];
+    }
     
     //change Back Button name
     UIBarButtonItem *leftNavigationButton     =   [[UIBarButtonItem alloc] initWithTitle:[NSString stringWithFormat:@"< %@",NSLocalizedString(@"Update", @"Back Button name")] 
@@ -52,6 +56,11 @@
                                             selector:@selector(validationProcessNotification:)
                                             name:@"validationProcessNotification"
                                             object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveNotification:)
+                                                 name:@"didReceiveNotification"
+                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -60,6 +69,10 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                             name:@"validationProcessNotification"
                                             object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                 name:@"didReceiveNotification"
+                                               object:nil];
 }
 
 /*!
@@ -245,6 +258,18 @@
 }
 
 /*!
+ * @brief After clicking the note button the latest notification is shown
+ * @param sender An object representing the button actions requesting for the data
+ */
+-(IBAction)viewNotification:(id)sender{
+    self.receivedNotification    =   [[NSUserDefaults standardUserDefaults] objectForKey:@"receivedNotification"];
+    NSDictionary *alertMessage   =   self.receivedNotification[@"alert"];
+    
+    UIAlertView *alertView       =   [[UIAlertView alloc] initWithTitle:alertMessage[@"title"] message:alertMessage[@"body"] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"Action") otherButtonTitles:nil];
+    [alertView show];
+}
+
+/*!
  * @brief To get the device IP Address
  */
 - (NSString *)getIPAddress {
@@ -330,10 +355,20 @@
             [alertView show];
         }
     }
-
-    
 }
 
+/*!
+ * @brief After receiving the notification this function is automatically triggered
+ * @param notification Holds the return message from the server and name of the notification
+ */
+-(void)didReceiveNotification :(NSNotification *) notification{
+    if ([[notification name] isEqualToString:@"didReceiveNotification"]) {
+        self.receivedNotification    =   [[NSUserDefaults standardUserDefaults] objectForKey:@"receivedNotification"];
+        if(self.receivedNotification){
+            [self.notification setHidden:NO];
+        }
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

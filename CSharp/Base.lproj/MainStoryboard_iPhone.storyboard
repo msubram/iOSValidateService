@@ -465,6 +465,17 @@
                                                         <action selector="updateTelephoneNumber:" destination="AIy-Qh-yz6" eventType="touchUpInside" id="DXT-Cz-zG7"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sXB-Md-mEC">
+                                                    <rect key="frame" x="116" y="28" width="89" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <color key="backgroundColor" red="0.72373532460000001" green="0.0" blue="0.065279347959999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Send">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="sendRegistrationTokenViaMail:" destination="AIy-Qh-yz6" eventType="touchUpInside" id="BxO-MP-gdh"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -511,6 +522,14 @@
                                     <action selector="validationProcess:" destination="Zcv-EM-Rog" eventType="touchUpInside" id="p69-Bk-d5N"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fRG-Uk-PcI">
+                                <rect key="frame" x="123" y="419" width="75" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="note"/>
+                                <connections>
+                                    <action selector="viewNotification:" destination="Zcv-EM-Rog" eventType="touchUpInside" id="TER-fw-rdw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -523,6 +542,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="notification" destination="fRG-Uk-PcI" id="TB1-tS-3K7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66u-MX-FhI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -531,5 +553,6 @@
     </scenes>
     <resources>
         <image name="CSharp_Logo_Icon-144" width="144" height="144"/>
+        <image name="note" width="300" height="300"/>
     </resources>
 </document>

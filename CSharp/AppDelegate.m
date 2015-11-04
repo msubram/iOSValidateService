@@ -45,6 +45,8 @@ NSString *const SubscriptionTopic = @"/topics/global";
         if (registrationToken != nil) {
             weakSelf.registrationToken = registrationToken;
             NSLog(@"Registration Token: %@", registrationToken);
+            [[NSUserDefaults standardUserDefaults] setValue:registrationToken forKey:@"registrationToken"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             [weakSelf subscribeToTopic];
             NSDictionary *userInfo = @{@"registrationToken":registrationToken};
             [[NSNotificationCenter defaultCenter] postNotificationName:weakSelf.registrationKey
@@ -177,7 +179,7 @@ NSString *const SubscriptionTopic = @"/topics/global";
     // token to enable reception of notifications
     [[GGLInstanceID sharedInstance] startWithConfig:instanceIDConfig];
     _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:devToken,
-                             kGGLInstanceIDAPNSServerTypeSandboxOption:@YES};
+                             kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
     [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
                                                         scope:kGGLInstanceIDScopeGCM
                                                       options:_registrationOptions
@@ -197,18 +199,19 @@ NSString *const SubscriptionTopic = @"/topics/global";
 }
 /* End */
 
-- (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo
-fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
-    NSLog(@"Notification received: %@", userInfo);
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
+    NSLog(@"Notification received: %@", userInfo[@"aps"]);
+    
+    [[NSUserDefaults standardUserDefaults] setObject:userInfo[@"aps"] forKey:@"receivedNotification"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"didReceiveNotification" object:self userInfo:nil];
+    
     // This works only if the app started the GCM service
     [[GCMService sharedInstance] appDidReceiveMessage:userInfo];
     // Handle the received message
     // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
     // [START_EXCLUDE]
-    [[NSNotificationCenter defaultCenter] postNotificationName:_messageKey
-                                                        object:nil
-                                                      userInfo:userInfo];
     handler(UIBackgroundFetchResultNoData);
     // [END_EXCLUDE]
 }
