@@ -164,16 +164,18 @@
     NSUserDefaults *data                 =   [NSUserDefaults standardUserDefaults];
     NSString *messageBody                =   [data valueForKey:@"registrationToken"];
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"vishal@meliosystems.com"];
+    NSArray *toRecipents = [NSArray arrayWithObjects:@"vishal@meliosystems.com",@"prithivi@meliosystems.com",@"smani@csharpsolutions.co.uk ",nil];
     
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setMessageBody:messageBody isHTML:NO];
-    [mc setToRecipients:toRecipents];
-    
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
+    MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
+    if ([MFMailComposeViewController canSendMail])
+    {
+        mailComposer.mailComposeDelegate = self;
+        [mailComposer setSubject:emailTitle];
+        [mailComposer setMessageBody:messageBody isHTML:NO];
+        [mailComposer setToRecipients:toRecipents];
+        [self presentViewController:mailComposer animated:YES completion:^{
+        }];
+    }
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

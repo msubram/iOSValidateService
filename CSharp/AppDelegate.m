@@ -60,9 +60,6 @@ NSString *const SubscriptionTopic = @"/topics/global";
                                                               userInfo:userInfo];
         }
     };
-
-    
-    
     return YES;
 }
 
@@ -179,7 +176,7 @@ NSString *const SubscriptionTopic = @"/topics/global";
     // token to enable reception of notifications
     [[GGLInstanceID sharedInstance] startWithConfig:instanceIDConfig];
     _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:devToken,
-                             kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
+                             kGGLInstanceIDAPNSServerTypeSandboxOption:@YES};
     [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
                                                         scope:kGGLInstanceIDScopeGCM
                                                       options:_registrationOptions
